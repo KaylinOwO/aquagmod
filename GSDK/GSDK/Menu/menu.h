@@ -6,6 +6,7 @@
 
 namespace Menu
 {
+	bool initialised = false;
 	bool opened = false;
 	bool InsertDown = false;
 	int n_open = 0;

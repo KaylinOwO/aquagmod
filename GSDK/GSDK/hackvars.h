@@ -63,6 +63,7 @@ namespace HackVars
 			bool PlayerXQZ;
 			bool PlayerCFlat;
 			int PlayerChamsStyle;
+			int WeaponChamsStyle;
 			float fVPlayerChamsColor[4] = { 0, 0.82f, 0, 0 };
 			float fNVPlayerChamsColor[4] = { 0, 0, 1, 0 };
 

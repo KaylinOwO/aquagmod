@@ -141,7 +141,8 @@ namespace Menu
 					const char* Styles[]
 					{
 						"Normal",
-						"Flat"
+						"Flat",
+						"Wireframe"
 					};
 
 					ImGui::Text("Chams Style");

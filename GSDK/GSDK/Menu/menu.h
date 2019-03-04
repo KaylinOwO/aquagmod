@@ -38,8 +38,6 @@ namespace Menu
 		ImGuiIO& io = ImGui::GetIO();
 		ImGuiStyle& style = ImGui::GetStyle();
 
-		ImGui::GetIO().MouseDrawCursor = 0;
-
 
 		ImVec2 pos = ImGui::GetWindowPos();
 
@@ -52,8 +50,6 @@ namespace Menu
 		ImGui::SetNextWindowSize(ImVec2(880, 520));
 		ImGui::Begin("KV", &opened, ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_ShowBorders | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoTitleBar);
 		{
-
-			ImGui::GetIO().MouseDrawCursor = 1;
 
 			ImGui::PushFont(gFontz.icon2);
 

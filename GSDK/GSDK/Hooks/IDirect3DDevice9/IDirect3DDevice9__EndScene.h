@@ -132,11 +132,13 @@ HRESULT __stdcall hookEndScene(IDirect3DDevice9* device)
 			device->SetRenderState(D3DRS_COLORWRITEENABLE, 0xffffffff);
 			device->SetRenderState(D3DRS_COLORWRITEENABLE, 0xffffffff);
 			device->SetRenderState(D3DRS_SRGBWRITEENABLE, false);
+			ImGui::GetIO().MouseDrawCursor = 1;
 		}
 		else
 		{
 			InputSystem()->EnableInput(true);
 			surface()->SetCursorAlwaysVisible(false);
+			ImGui::GetIO().MouseDrawCursor = 0;
 		}
 		ImGui_ImplDX9_NewFrame();
 		Menu::OpenMenuThing();

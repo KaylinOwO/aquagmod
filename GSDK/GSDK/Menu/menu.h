@@ -191,6 +191,18 @@ namespace Menu
 				ImGui::BeginChildNew("Misc", ImVec2(285, -1), true, ImGuiWindowFlags_ChildZeus);
 				{
 					ImGui::Checkbox("Bunnyhop", &HackVars::Misc::Bunnyhop);
+
+					ImGui::Separator();
+					ImGui::Spacing();
+
+					ImGui::Checkbox("Followbot", &HackVars::Misc::FollowBot::Enabled);
+					if (HackVars::Misc::FollowBot::Enabled)
+					{
+						ImGui::Hotkey(" > Key", &HackVars::Misc::FollowBot::Key);
+
+						ImGui::SliderFloat(" > Max Distance", &HackVars::Misc::FollowBot::MaxDist, 0.0f, 1000.f, ("%.1f"));
+						ImGui::SliderFloat(" > Min Distance", &HackVars::Misc::FollowBot::MinDist, 0.0f, 1000.f, ("%.1f"));
+					}
 				}
 				ImGui::EndChild();
 

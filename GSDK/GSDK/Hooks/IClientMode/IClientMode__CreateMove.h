@@ -1,8 +1,6 @@
 typedef bool(__thiscall* CreateMoveFn)(void*, float, CUserCmd*);
 CreateMoveFn orgCreateMove = nullptr;
 
-
-
 bool __fastcall hookCreateMove(ClientMode* ClientMode, void* edx, float flInputSampleTime, CUserCmd* cmd)
 {
 	if (!cmd)
@@ -36,6 +34,8 @@ bool __fastcall hookCreateMove(ClientMode* ClientMode, void* edx, float flInputS
 
 	if (HackVars::Misc::Bunnyhop)
 		H::Bhop(cmd);
+
+	H::RunFollowbot(cmd);
 
 	PredictionSystem.StartPrediction(cmd);
 	

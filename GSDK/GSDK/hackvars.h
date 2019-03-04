@@ -100,5 +100,12 @@ namespace HackVars
 	{
 		bool Bunnyhop;
 		bool Hitsound;
+
+		namespace FollowBot {
+			bool Enabled;
+			int Key;
+			float MaxDist = 175.f;
+			float MinDist = 35.f;
+		}
 	}
 };

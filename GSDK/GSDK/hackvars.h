@@ -62,8 +62,11 @@ namespace HackVars
 			bool PlayerChamsEnabled;
 			bool PlayerXQZ;
 			bool PlayerCFlat;
+			int PlayerChamsStyle;
 			float fVPlayerChamsColor[4] = { 0, 0.82f, 0, 0 };
 			float fNVPlayerChamsColor[4] = { 0, 0, 1, 0 };
+
+			float WireframeHandsColor[4] = { 0, 0.82f, 0, 0 };
 
 			// lua esp
 			bool LuaESP;

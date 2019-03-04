@@ -138,11 +138,18 @@ namespace Menu
 					ImGui::SameLine();
 					ImGui::MyColorEdit4("###chamscolor", HackVars::Visuals::ESP::fVPlayerChamsColor, ImGuiColorEditFlags_Alpha | ImGuiColorEditFlags_NoSliders);
 
+					const char* Styles[]
+					{
+						"Normal",
+						"Flat"
+					};
+
+					ImGui::Text("Chams Style");
+					ImGui::Combo("##chamsstyle", &HackVars::Visuals::ESP::PlayerChamsStyle, Styles, ARRAYSIZE(Styles));
+
 					ImGui::Checkbox("XQZ", &HackVars::Visuals::ESP::PlayerXQZ);
 					ImGui::SameLine();
 					ImGui::MyColorEdit4("###chamsxqzcolor", HackVars::Visuals::ESP::fNVPlayerChamsColor, ImGuiColorEditFlags_Alpha | ImGuiColorEditFlags_NoSliders);
-
-					ImGui::Checkbox("Flat", &HackVars::Visuals::ESP::PlayerCFlat);
 				}
 				ImGui::EndChild();
 
@@ -164,6 +171,9 @@ namespace Menu
 					ImGui::Spacing();
 
 					ImGui::Checkbox("Wireframe Hands", &HackVars::Visuals::WireframeHands);
+					ImGui::SameLine();
+					ImGui::MyColorEdit4("###wireframehandscolor", HackVars::Visuals::ESP::WireframeHandsColor, ImGuiColorEditFlags_Alpha | ImGuiColorEditFlags_NoSliders);
+
 					ImGui::Checkbox("Hitmarker", &HackVars::Visuals::Hitmarker);
 
 				}

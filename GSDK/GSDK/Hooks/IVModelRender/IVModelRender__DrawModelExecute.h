@@ -23,7 +23,10 @@ void __fastcall hookDrawModelExecute(IVModelRender* modelrender, void* edx, Draw
 		{
 			if (HackVars::Visuals::ESP::PlayerXQZ)
 			{
-				DebugWhite->SetMaterialVarFlag(MATERIAL_VAR_SELFILLUM, HackVars::Visuals::ESP::PlayerCFlat);
+				if (HackVars::Visuals::ESP::PlayerChamsStyle == 0)
+					DebugWhite->SetMaterialVarFlag(MATERIAL_VAR_SELFILLUM, false);
+				else if (HackVars::Visuals::ESP::PlayerChamsStyle == 1)
+					DebugWhite->SetMaterialVarFlag(MATERIAL_VAR_SELFILLUM, true);
 				DebugWhite->SetMaterialVarFlag(MATERIAL_VAR_IGNOREZ, true);
 				colormod[0] = HackVars::Visuals::ESP::fNVPlayerChamsColor[0]; colormod[1] = HackVars::Visuals::ESP::fNVPlayerChamsColor[1]; colormod[2] = HackVars::Visuals::ESP::fNVPlayerChamsColor[2];
 				renderview()->SetColorModulation(colormod);
@@ -32,7 +35,10 @@ void __fastcall hookDrawModelExecute(IVModelRender* modelrender, void* edx, Draw
 			}
 			if (HackVars::Visuals::ESP::PlayerChamsEnabled)
 			{
-				DebugWhite->SetMaterialVarFlag(MATERIAL_VAR_SELFILLUM, HackVars::Visuals::ESP::PlayerCFlat);
+				if (HackVars::Visuals::ESP::PlayerChamsStyle == 0)
+					DebugWhite->SetMaterialVarFlag(MATERIAL_VAR_SELFILLUM, false);
+				else if (HackVars::Visuals::ESP::PlayerChamsStyle == 1)
+					DebugWhite->SetMaterialVarFlag(MATERIAL_VAR_SELFILLUM, true);
 				DebugWhite->SetMaterialVarFlag(MATERIAL_VAR_IGNOREZ, false);
 				colormod[0] = HackVars::Visuals::ESP::fVPlayerChamsColor[0]; colormod[1] = HackVars::Visuals::ESP::fVPlayerChamsColor[1]; colormod[2] = HackVars::Visuals::ESP::fVPlayerChamsColor[2];
 				renderview()->SetColorModulation(colormod);
@@ -124,7 +130,7 @@ void __fastcall hookDrawModelExecute(IVModelRender* modelrender, void* edx, Draw
 			WireFrame->AddRef();
 
 			float colormod[3];
-			colormod[0] = 0; colormod[1] = 0.43; colormod[2] = 1;
+			colormod[0] = HackVars::Visuals::ESP::WireframeHandsColor[0]; colormod[1] = HackVars::Visuals::ESP::WireframeHandsColor[1]; colormod[2] = HackVars::Visuals::ESP::WireframeHandsColor[2];
 			ModelRender()->ForcedMaterialOverride(WireFrame);
 			renderview()->SetColorModulation(colormod);
 			orgDrawModelExecute(modelrender, state, pInfo, pCustomBoneToWorld);

@@ -15,9 +15,9 @@ namespace Menu
 	void morphBtnActiveTab()
 	{
 		auto& style = ImGui::GetStyle();
-		style.Colors[ImGuiCol_Button] = ImColor(131, 0, 202, 255);
-		style.Colors[ImGuiCol_ButtonHovered] = ImColor(131, 0, 202, 255);
-		style.Colors[ImGuiCol_ButtonActive] = ImColor(131, 0, 202, 255);
+		style.Colors[ImGuiCol_Button] = ImColor(113, 221, 229, 255);
+		style.Colors[ImGuiCol_ButtonHovered] = ImColor(113, 221, 229, 255);
+		style.Colors[ImGuiCol_ButtonActive] = ImColor(113, 221, 229, 255);
 		style.Colors[ImGuiCol_Text] = ImColor(255, 255, 255, 255);
 	}
 

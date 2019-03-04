@@ -79,10 +79,10 @@ HRESULT __stdcall hookEndScene(IDirect3DDevice9* device)
 		ImVec4 menubarColor = ImVec4(bodyColor.Value.x, bodyColor.Value.y, bodyColor.Value.z, bodyColor.Value.w - 0.8f);
 		ImVec4 frameBgColor = ImVec4(bodyColor.Value.x, bodyColor.Value.y, bodyColor.Value.z, bodyColor.Value.w + .1f);
 		ImVec4 tooltipBgColor = ImVec4(bodyColor.Value.x, bodyColor.Value.y, bodyColor.Value.z, bodyColor.Value.w + .05f);
-		style.Colors[ImGuiCol_Button] = ImColor(131, 0, 202, 255);
+		style.Colors[ImGuiCol_Button] = ImColor(113, 221, 229, 255);
 
-		style.Colors[ImGuiCol_MainTheme] = ImColor(131, 0, 202, 255);
-		style.Colors[ImGuiCol_MainTheme2] = ImColor(131, 0, 202, 255);
+		style.Colors[ImGuiCol_MainTheme] = ImColor(113, 221, 229, 255);
+		style.Colors[ImGuiCol_MainTheme2] = ImColor(113, 221, 229, 255);
 
 		style.Colors[ImGuiCol_Text] = ImVec4(1.f, 1.f, 1.f, 1.f);
 		style.Colors[ImGuiCol_TextDisabled] = ImVec4(1.f, 1.f, 1.f, 1.f);
@@ -105,12 +105,12 @@ HRESULT __stdcall hookEndScene(IDirect3DDevice9* device)
 		style.Colors[ImGuiCol_CheckMark] = ImVec4(0.76f, 0.10f, 0.24f, 1.00f);
 		style.Colors[ImGuiCol_SliderGrab] = ImColor(68, 140, 255);
 		style.Colors[ImGuiCol_SliderGrabActive] = ImColor(68, 140, 255);
-		style.Colors[ImGuiCol_Button] = ImColor(131, 0, 202, 255);
-		style.Colors[ImGuiCol_ButtonHovered] = ImColor(131, 0, 202, 255);
-		style.Colors[ImGuiCol_ButtonActive] = ImColor(131, 0, 202, 255);
-		style.Colors[ImGuiCol_Header] = ImColor(131, 0, 202, 225);
-		style.Colors[ImGuiCol_HeaderHovered] = ImColor(131, 0, 202, 125);
-		style.Colors[ImGuiCol_HeaderActive] = ImColor(131, 0, 202, 225);
+		style.Colors[ImGuiCol_Button] = ImColor(113, 221, 229, 255);
+		style.Colors[ImGuiCol_ButtonHovered] = ImColor(113, 221, 229, 255);
+		style.Colors[ImGuiCol_ButtonActive] = ImColor(113, 221, 229, 255);
+		style.Colors[ImGuiCol_Header] = ImColor(113, 221, 229, 225);
+		style.Colors[ImGuiCol_HeaderHovered] = ImColor(113, 221, 229, 125);
+		style.Colors[ImGuiCol_HeaderActive] = ImColor(113, 221, 229, 225);
 
 		style.Colors[ImGuiCol_Column] = ImVec4(.30f, .30f, .30f, 1.f);
 		style.Colors[ImGuiCol_ColumnHovered] = mainColorHovered;

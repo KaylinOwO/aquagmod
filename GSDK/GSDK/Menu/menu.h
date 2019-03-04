@@ -155,7 +155,9 @@ namespace Menu
 					ImGui::Separator();
 					ImGui::Spacing();
 
+					ImGui::Checkbox("FOV Changer", &HackVars::Visuals::RenderView::FOVEnabled);
 					ImGui::SliderInt("FOV", &HackVars::Visuals::RenderView::FOV, 0, 180);
+					ImGui::Checkbox("Viewmodel FOV Changer", &HackVars::Visuals::RenderView::ViewModelFOVEnabled);
 					ImGui::SliderInt("Viewmodel FOV", &HackVars::Visuals::RenderView::ViewModelFOV, 0, 180);
 
 					ImGui::Separator();

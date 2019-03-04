@@ -38,8 +38,10 @@ void __fastcall hookRenderView(IViewRender* ViewRender, void* edx, CViewSetup& v
 	else
 		Input()->m_fCameraInThirdPerson = false;
 
-	view.fov = HackVars::Visuals::RenderView::FOV;
-	view.fovViewmodel = HackVars::Visuals::RenderView::ViewModelFOV;
+	if (HackVars::Visuals::RenderView::FOVEnabled)
+		view.fov = HackVars::Visuals::RenderView::FOV;
+	if (HackVars::Visuals::RenderView::ViewModelFOVEnabled)
+		view.fovViewmodel = HackVars::Visuals::RenderView::ViewModelFOV;
 	HackVars::FOV = view.fov;
 	
 	if(HackVars::CurCmd) {

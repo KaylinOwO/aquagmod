@@ -5,6 +5,7 @@ namespace offsets
 		int m_iFOV = 0;
 		int m_iFOVStart = 0;
 		int m_flFOVTime = 0;
+		int m_bIsScoped = 0;
 		int m_iDefaultFOV = 0;
 		int m_hZoomOwner = 0;
 		int m_hVehicle = 0;

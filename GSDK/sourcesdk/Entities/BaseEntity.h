@@ -552,6 +552,18 @@ public:
 		return *(bool*)((uintptr_t)this + offsets::DT_BaseAnimating::m_bClientSideAnimation);
 	}
 
+	template< class T >
+	inline T GetFieldValue(int offset)
+	{
+		return *(T*)((DWORD)this + offset);
+	}
+
+	bool m_bIsScoped()
+	{
+		static int m_bIsScoped = offsets::DT_BasePlayer::m_bIsScoped;
+		return GetFieldValue< bool >(m_bIsScoped);
+	}
+
 	CUtlFlags<int> GetFlags()
 	{
 		return *(int*)((uintptr_t)this + offsets::DT_BasePlayer::m_fFlags);

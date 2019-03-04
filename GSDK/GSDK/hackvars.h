@@ -43,7 +43,9 @@ namespace HackVars
 		{
 			int Thirdperson;
 			int ThirdPersonDistance = 100;
+			bool FOVEnabled;
 			int FOV = 0;
+			bool ViewModelFOVEnabled;
 			int ViewModelFOV = 0;
 		};
 		namespace ESP

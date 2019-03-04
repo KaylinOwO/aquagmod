@@ -10,6 +10,7 @@ void SetupOffsets()
 	offsets::DT_BasePlayer::m_iFOV						= NVMGR->GetOffset("DT_BasePlayer","m_iFOV");
 	offsets::DT_BasePlayer::m_iFOVStart					= NVMGR->GetOffset("DT_BasePlayer", "m_iFOVStart");
 	offsets::DT_BasePlayer::m_flFOVTime					= NVMGR->GetOffset("DT_BasePlayer", "m_flFOVTime");
+	offsets::DT_BasePlayer::m_bIsScoped					= NVMGR->GetOffset("DT_BasePlayer", "m_bIsScoped");
 	offsets::DT_BasePlayer::m_iDefaultFOV				= NVMGR->GetOffset("DT_BasePlayer", "m_iDefaultFOV");
 	offsets::DT_BasePlayer::m_hZoomOwner				= NVMGR->GetOffset("DT_BasePlayer", "m_hZoomOwner");
 	offsets::DT_BasePlayer::m_hVehicle					= NVMGR->GetOffset("DT_BasePlayer", "m_hVehicle");

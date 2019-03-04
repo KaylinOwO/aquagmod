@@ -19,6 +19,12 @@ namespace H
 		{
 			DrawLine(pos1.x, pos1.y, pos2.x, pos2.y, color);
 		}
+		void DrawOutlineRect(int x, int y, int w, int h, Color color = Color(255, 255, 255, 255))
+		{
+			surface()->DrawSetColor(color);
+			surface()->DrawOutlinedRect(x, y, x + w, y + h);
+			surface()->DrawSetColor(255, 255, 255, 255);
+		}
 		void DrawCircle(int x, int y, int radius,int segments, Color color = Color(255, 255, 255, 255))
 		{
 			surface()->DrawSetColor(color);

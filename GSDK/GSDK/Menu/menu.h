@@ -124,8 +124,18 @@ namespace Menu
 					ImGui::SameLine();
 					ImGui::MyColorEdit4("###boxcolor", HackVars::Visuals::ESP::fPBoxColor, ImGuiColorEditFlags_Alpha | ImGuiColorEditFlags_NoSliders);
 
+					const char* BoxStyles[]
+					{
+						"Normal",
+						"Corner"
+					};
+
+					ImGui::Text("Box Style");
+					ImGui::Combo("##boxstyle", &HackVars::Visuals::ESP::PlayerBoxStyle, BoxStyles, ARRAYSIZE(BoxStyles));
+
 					ImGui::Checkbox("Name", &HackVars::Visuals::ESP::PlayerDrawname);
 					ImGui::Checkbox("Health", &HackVars::Visuals::ESP::PlayerDrawHealth);
+					ImGui::Checkbox("Health Bar", &HackVars::Visuals::ESP::PlayerDrawHealthBar);
 
 					ImGui::Separator();
 					ImGui::Spacing();
@@ -134,7 +144,7 @@ namespace Menu
 					ImGui::SameLine();
 					ImGui::MyColorEdit4("###chamscolor", HackVars::Visuals::ESP::fVPlayerChamsColor, ImGuiColorEditFlags_Alpha | ImGuiColorEditFlags_NoSliders);
 
-					const char* Styles[]
+					const char* ChamStyles[]
 					{
 						"Normal",
 						"Flat",
@@ -142,7 +152,7 @@ namespace Menu
 					};
 
 					ImGui::Text("Chams Style");
-					ImGui::Combo("##chamsstyle", &HackVars::Visuals::ESP::PlayerChamsStyle, Styles, ARRAYSIZE(Styles));
+					ImGui::Combo("##chamsstyle", &HackVars::Visuals::ESP::PlayerChamsStyle, ChamStyles, ARRAYSIZE(ChamStyles));
 
 					ImGui::Checkbox("XQZ", &HackVars::Visuals::ESP::PlayerXQZ);
 					ImGui::SameLine();

@@ -54,8 +54,10 @@ namespace HackVars
 			bool PlayerESP;
 
 			bool PlayerBox;
+			int PlayerBoxStyle;
 			bool PlayerDrawname;
 			bool PlayerDrawHealth;
+			bool PlayerDrawHealthBar;
 			float fPBoxColor[4] = { 1, 1, 1, 1 };
 			Color PBoxColor = Color(255, 255, 255, 255);
 

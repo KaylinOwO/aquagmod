@@ -110,7 +110,7 @@ namespace H
 				}
 				else if (!HackVars::Visuals::ESP::PlayerBox) //Don't ask, just leave it here
 				{
-					H::Draw::DrawOutlineRect(x, y, w, h, HackVars::Visuals::ESP::fPBoxColor);
+					H::Draw::DrawOutlineRect(x, y, w, h, Color(0, 0, 0, 0));
 					H::Draw::DrawOutlineRect(x + 1, y + 1, w - 2, h - 2, Color(0, 0, 0, 0));
 				}
 
@@ -123,30 +123,29 @@ namespace H
 						iY += 15;
 					}
 				}
+
+				float health = Ent->GetHealth();
+
+				int Red = 255 - (health*2.55);
+				int Green = health*2.55;
+
 				if (Ent->GetHealth() > 0 && HackVars::Visuals::ESP::PlayerDrawHealth)
 				{
-					float health = Ent->GetHealth();
-
-					int Red = 255 - (health*2.55);
-					int Green = health*2.55;
-
 					H::Draw::Drawtext(std::to_string(Ent->GetHealth()).c_str(), HackVars::Fonts::DefaultFont, x + w + 2, y + iY, Color(Red, Green, 0, 255));
 					iY += 15;
 				}
+
 				if (Ent->GetHealth() > 0 && HackVars::Visuals::ESP::PlayerDrawHealthBar)
 				{
 					float hh = (h);
 					float offset = (hh / 4.f) + 5;
 					float w = hh / 64.f;
-					float health = Ent->GetHealth();
 					UINT hp = hh - (UINT)((hh * health) / 100); // Percentage
 
-					int Red = 255 - (health*2.55);
-					int Green = health*2.55;
+					H::Draw::Drawtext("", HackVars::Fonts::DefaultFont, x + w + 2, y + iY, Color(Red, Green, 0, 255));
+					iY += 15;
 
 					H::Draw::DrawOutlineRect((x - 6) - 1, y - 1, 3, hh + 2, Color(0, 0, 0, 255));
-
-
 					H::Draw::DrawLine((x - 6), y + hp, (x - 6), y + hh, Color(Red, Green, 0, 255));
 				}
 			}

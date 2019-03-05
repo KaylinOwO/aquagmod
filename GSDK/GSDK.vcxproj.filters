@@ -521,5 +521,8 @@
     <ClInclude Include="..\..\Aqua For Garry%27s Mod\GSDK\Singleton.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Aqua For Garry%27s Mod\GSDK\GSDK\hacks\Backtrack.h">
+      <Filter>Header Files\GSDK\hacks</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

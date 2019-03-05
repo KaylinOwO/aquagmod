@@ -108,11 +108,6 @@ namespace H
 						H::Draw::DrawOutlineRect(x + w, y + h - HorzLine, 1, HorzLine, HackVars::Visuals::ESP::fPBoxColor);
 					}
 				}
-				else if (!HackVars::Visuals::ESP::PlayerBox) //Don't ask, just leave it here
-				{
-					H::Draw::DrawOutlineRect(x, y, w, h, Color(0, 0, 0, 0));
-					H::Draw::DrawOutlineRect(x + 1, y + 1, w - 2, h - 2, Color(0, 0, 0, 0));
-				}
 
 				if (HackVars::Visuals::ESP::PlayerDrawname)
 				{
@@ -142,6 +137,8 @@ namespace H
 					float w = hh / 64.f;
 					UINT hp = hh - (UINT)((hh * health) / 100); // Percentage
 
+					H::Draw::DrawOutlineRect(x, y, w, h, Color(0, 0, 0, 0));
+					H::Draw::DrawOutlineRect(x + 1, y + 1, w - 2, h - 2, Color(0, 0, 0, 0));
 					H::Draw::Drawtext("", HackVars::Fonts::DefaultFont, x + w + 2, y + iY, Color(Red, Green, 0, 255));
 					iY += 15;
 

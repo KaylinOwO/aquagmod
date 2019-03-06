@@ -71,7 +71,7 @@ namespace H
 
 
 
-			if(Ent->IsPlayer())
+			if(Ent->IsPlayer() && Ent->IsAlive())
 			{ 
 				if (HackVars::Visuals::ESP::PlayerBox)
 				{

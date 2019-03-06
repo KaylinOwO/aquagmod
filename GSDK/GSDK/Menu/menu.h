@@ -187,15 +187,18 @@ namespace Menu
 				ImGui::EndChild();
 			}
 
-
 			if (tab == 2)
 			{
 				ImGui::Spacing();
 				ImGui::Spacing();
 
+
 				ImGui::Text("");
 				ImGui::BeginChildNew("Misc", ImVec2(285, -1), true, ImGuiWindowFlags_ChildZeus);
 				{
+					ImGui::Spacing();
+					ImGui::Spacing();
+
 					ImGui::Checkbox("Bunnyhop", &HackVars::Misc::Bunnyhop);
 
 					ImGui::Separator();
@@ -216,8 +219,15 @@ namespace Menu
 				ImGui::BeginChildNew("Accuracy", ImVec2(285, -1), true, ImGuiWindowFlags_ChildZeus);
 				{
 					ImGui::Checkbox("Nospread", &HackVars::Aimbot::Nospread);
+
 				}
 				ImGui::EndChild();
+			}
+
+
+			if (tab == 3)
+			{
+				//Placeholder
 			}
 			ImGui::PopFont();
 

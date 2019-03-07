@@ -51,26 +51,27 @@ namespace Menu
 		ImGui::Begin("KV", &opened, ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_ShowBorders | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoTitleBar);
 		{
 
-			ImGui::PushFont(gFontz.icon2);
+			//ImGui::PushFont(gFontz.eagle);
+			//style.Colors[ImGuiCol_Text] = ImVec4(1.00f, 1.00f, 1.00f, 1.00f);
+			//ImGui::MyButton("a", true, ImVec2(880, 95));
+			//ImGui::PopFont();
+
+			ImGui::PushFont(gFontz.feagle);
 
 
 			if (tab == 0) morphBtnActiveTab(); else morphBtnNormalTab();
 			style.ButtonTextAlign = ImVec2(0.5f, 0.5f);
-			if (ImGui::MyButton("a", true, ImVec2(128, 50))) tab = 0;
-			ImGui::SameLine();
-			ImGui::PopFont();
-
-			ImGui::PushFont(gFontz.icon);
+			if (ImGui::MyButton("b", true, ImVec2(128, 50))) tab = 0;
 
 			ImGui::SameLine();
 			if (tab == 1) morphBtnActiveTab(); else morphBtnNormalTab();
 			style.ButtonTextAlign = ImVec2(0.5f, 0.5f);
-			if (ImGui::MyButton("e", true, ImVec2(128, 50))) tab = 1;
+			if (ImGui::MyButton("c", true, ImVec2(128, 50))) tab = 1;
 			ImGui::SameLine();
 
 			if (tab == 2) morphBtnActiveTab(); else morphBtnNormalTab();
 			style.ButtonTextAlign = ImVec2(0.5f, 0.5f);
-			if (ImGui::MyButton("H", true, ImVec2(128, 50))) tab = 2;
+			if (ImGui::MyButton("d", true, ImVec2(128, 50))) tab = 2;
 
 			ImGui::PopFont();
 			ImGui::PushFont(gFontz.Text);
@@ -163,6 +164,7 @@ namespace Menu
 				ImGui::SameLine();
 				ImGui::BeginChildNew("Others", ImVec2(285, -1), true, ImGuiWindowFlags_ChildZeus);
 				{
+
 					ImGui::Hotkey("Thirdperson", &HackVars::Visuals::RenderView::Thirdperson);
 					ImGui::SliderInt("Thirdperson Distance", &HackVars::Visuals::RenderView::ThirdPersonDistance, 0, 500);
 

@@ -32,6 +32,9 @@ HRESULT __stdcall hookEndScene(IDirect3DDevice9* device)
 		gFontz.icon = io.Fonts->AddFontFromMemoryCompressedTTF(MyFont_compressed_data13, MyFont_compressed_size13, 25.f);
 		gFontz.icon2 = io.Fonts->AddFontFromMemoryCompressedTTF(MyFont_compressed_dataxdd, MyFont_compressed_sizexdd, 25.f);
 		gFontz.menubarxd = io.Fonts->AddFontFromMemoryCompressedTTF(MyFont_compressed_data13, MyFont_compressed_size13, 15.f);
+		//gFontz.eagle = io.Fonts->AddFontFromMemoryCompressedTTF(eagle2_compressed_data, eagle2_compressed_size, 70.f);
+		gFontz.feagle = io.Fonts->AddFontFromMemoryCompressedTTF(eagle_compressed_data, eagle_compressed_size, 25.f);
+		//gFontz.Choktoff = io.Fonts->AddFontFromMemoryCompressedTTF(Choktoff_compressed_data, Choktoff_compressed_size, 14.0f);
 		gFontz.Text = io.Fonts->AddFontFromFileTTF("C:\\Windows\\Fonts\\Tahoma.ttf", 12.f);
 		ImGui_ImplDX9_Init(gmod, device);
 

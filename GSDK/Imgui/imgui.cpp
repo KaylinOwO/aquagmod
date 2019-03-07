@@ -10,6 +10,8 @@
 // This library is free but I need your support to sustain development and maintenance.
 // If you work for a company, please consider financial support, e.g: https://www.patreon.com/imgui
 
+#include "../Fontz.h"
+
 /*
 
  Index
@@ -9411,9 +9413,6 @@ bool ImGui::ColorButton(const ImVec4& col, bool small_height, bool outline_borde
 	bool pressed = ButtonBehavior(bb, id, &hovered, &held);
 	RenderFrame(bb.Min, bb.Max, GetColorU32(col), outline_border, style.FrameRounding);
 
-	if (hovered)
-		SetTooltip("Color:\n(%.2f,%.2f,%.2f,%.2f)\n#%02X%02X%02X%02X", col.x, col.y, col.z, col.w, IM_F32_TO_INT8_SAT(col.x), IM_F32_TO_INT8_SAT(col.y), IM_F32_TO_INT8_SAT(col.z), IM_F32_TO_INT8_SAT(col.w));
-
 	return pressed;
 }
 
@@ -9529,8 +9528,6 @@ bool ImGui::ColorEdit4(const char* label, float col[4], bool alpha)
 		g.ColorEditModeStorage.SetInt(id, (edit_mode + 1) % 3); // Don't set local copy of 'edit_mode' right away!
 
 	// Recreate our own tooltip over's ColorButton() one because we want to display correct alpha here
-	if (IsItemHovered())
-		SetTooltip("Color:\n(%.2f,%.2f,%.2f,%.2f)\n#%02X%02X%02X%02X", col[0], col[1], col[2], col[3], IM_F32_TO_INT8_SAT(col[0]), IM_F32_TO_INT8_SAT(col[1]), IM_F32_TO_INT8_SAT(col[2]), IM_F32_TO_INT8_SAT(col[3]));
 
 	if (window->DC.ColorEditMode == ImGuiColorEditMode_UserSelectShowButton)
 	{

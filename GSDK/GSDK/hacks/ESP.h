@@ -199,6 +199,45 @@ namespace H
 			}
 			DrawAimbotTargetLine();
 		}
+
+		void NightMode()
+		{
+			C_GMOD_Player* LocalPlayer = (C_GMOD_Player*)cliententitylist()->GetClientEntity(engine()->GetLocalPlayer());
+			static std::string old_Skyname = "";
+			static bool OldNightmode;
+			static int OldSky;
+			if (!LocalPlayer || !engine()->IsConnected() || !engine()->IsInGame())
+			{
+				old_Skyname = "";
+				OldNightmode = false;
+				OldSky = 0;
+				return;
+			}
+			static ConVar*r_DrawSpecificStaticProp;
+			if (OldNightmode != HackVars::Visuals::Nightmode)
+			{
+				if (!r_DrawSpecificStaticProp)
+					r_DrawSpecificStaticProp = CVar()->FindVar("r_DrawSpecificStaticProp");
+				r_DrawSpecificStaticProp->SetValue(0);
+				for (MaterialHandle_t i = MaterialSystem()->FirstMaterial(); i != MaterialSystem()->InvalidMaterial(); i = MaterialSystem()->NextMaterial(i))
+				{
+					IMaterial* pMaterial = MaterialSystem()->GetMaterial(i);
+					if (!pMaterial)
+						continue;
+					if (strstr(pMaterial->GetTextureGroupName(), "World") || strstr(pMaterial->GetTextureGroupName(), "StaticProp"))
+					{
+						if (HackVars::Visuals::Nightmode)
+							if (strstr(pMaterial->GetTextureGroupName(), "StaticProp"))
+								pMaterial->ColorModulate(0.3f, 0.3f, 0.3f);
+							else
+								pMaterial->ColorModulate(0.2f, 0.2f, 0.2f);
+						else
+							pMaterial->ColorModulate(1.0f, 1.0f, 1.0f);
+					}
+				}
+				OldNightmode = HackVars::Visuals::Nightmode;
+			}
+		}
 	};
 
 };

@@ -62,6 +62,8 @@ void SetupOffsets()
 	offsets::DT_BaseEntity::m_vecVelocity0				= NVMGR->GetOffset("DT_BaseEntity", "m_vecVelocity[0]");
 	offsets::DT_BaseEntity::m_vecVelocity1				= NVMGR->GetOffset("DT_BaseEntity", "m_vecVelocity[1]");
 	offsets::DT_BaseEntity::m_vecVelocity2				= NVMGR->GetOffset("DT_BaseEntity", "m_vecVelocity[2]");
+	offsets::DT_BaseEntity::m_vecPunchAngle				= NVMGR->GetOffset("DT_BaseEntity", "m_vecPunchAngle");
+	offsets::DT_BaseEntity::m_vecPunchAngleVel			= NVMGR->GetOffset("DT_BaseEntity", "m_vecPunchAngleVel");
 	offsets::DT_BaseEntity::m_GMOD_DataTable			= NVMGR->GetOffset("DT_BaseEntity", "m_GMOD_DataTable");
 	offsets::DT_BaseEntity::m_GMOD_bool					= NVMGR->GetOffset("DT_BaseEntity", "m_GMOD_bool");
 	offsets::DT_BaseEntity::m_GMOD_float				= NVMGR->GetOffset("DT_BaseEntity", "m_GMOD_float");

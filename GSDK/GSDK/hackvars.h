@@ -33,6 +33,7 @@ namespace HackVars
 	{
 		bool Enabled;
 		bool Hitmarker;
+		bool Nightmode;
 		bool WireframeHands;
 		namespace Aimbot
 		{

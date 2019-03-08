@@ -81,6 +81,8 @@ namespace offsets
 		int m_spawnflags = 0;
 		int m_iGModFlags = 0;
 		int m_bOnFire = 0;
+		int m_vecPunchAngleVel = 0;
+		int m_vecPunchAngle = 0;
 		int m_CreationTime = 0;
 		int m_vecVelocity0 = 0;
 		int m_vecVelocity1 = 0;

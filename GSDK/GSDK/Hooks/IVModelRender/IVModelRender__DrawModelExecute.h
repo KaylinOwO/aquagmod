@@ -7,6 +7,7 @@ void __fastcall hookDrawModelExecute(IVModelRender* modelrender, void* edx, Draw
 	{
 		C_GMOD_Player* LocalPlayer = (C_GMOD_Player*)cliententitylist()->GetClientEntity(engine()->GetLocalPlayer());
 		BaseEntity* Ent = (BaseEntity*)cliententitylist()->GetClientEntity(pInfo.entity_index);
+		const char* ModelName = ModelInfo()->GetModelName((model_t*)pInfo.pModel);
 
 		if(!Ent || Ent->IsWorld())
 			return orgDrawModelExecute(modelrender, state, pInfo, pCustomBoneToWorld);
@@ -125,6 +126,15 @@ void __fastcall hookDrawModelExecute(IVModelRender* modelrender, void* edx, Draw
 			renderview()->SetColorModulation(colormod);
 			return;
 		}
+		else if (HackVars::Visuals::Nightmode)
+		{
+			if (strstr(ModelName, "models/props"))
+			{
+				renderview()->SetBlend(0.5f);
+			}
+		}
+
+
 	}
 	return orgDrawModelExecute(modelrender, state, pInfo, pCustomBoneToWorld);
 }

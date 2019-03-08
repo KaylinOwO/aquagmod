@@ -24,6 +24,9 @@ void __fastcall hkPaintTraverse(void* ecx, void* edx, vgui::VPanel* vguiPanel, b
 	if (HackVars::Visuals::Aimbot::DrawTarget)
 		H::ESP::DrawAimbotTarget();
 
+	if (HackVars::Visuals::Nightmode)
+		H::ESP::NightMode();
+
 	for (int i = globals()->maxClients; i < cliententitylist()->GetHighestEntityIndex(); i++)
 	{
 		BaseEntity* ent = (BaseEntity*)cliententitylist()->GetClientEntity(i);

@@ -533,6 +533,15 @@ public:
 		return *(int*)((uintptr_t)this + offsets::DT_BasePlayer::m_lifeState);
 	}
 
+	Vector& m_vecPunchAngle()
+	{
+		return *(Vector*)((uintptr_t)this + offsets::DT_BaseEntity::m_vecPunchAngle);
+	}
+	Vector& m_vecPunchAngleVel()
+	{
+		return *(Vector*)((uintptr_t)this + offsets::DT_BaseEntity::m_vecPunchAngleVel);
+	}
+
 	Vector& m_vecOrigin()
 	{
 		return *(Vector*)((uintptr_t)this + offsets::DT_BaseEntity::m_vecOrigin);

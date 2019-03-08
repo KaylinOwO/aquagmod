@@ -164,6 +164,10 @@ namespace Menu
 				ImGui::SameLine();
 				ImGui::BeginChildNew("Others", ImVec2(285, -1), true, ImGuiWindowFlags_ChildZeus);
 				{
+					ImGui::Checkbox("Nightmode", &HackVars::Visuals::Nightmode);
+
+					ImGui::Separator();
+					ImGui::Spacing();
 
 					ImGui::Hotkey("Thirdperson", &HackVars::Visuals::RenderView::Thirdperson);
 					ImGui::SliderInt("Thirdperson Distance", &HackVars::Visuals::RenderView::ThirdPersonDistance, 0, 500);

@@ -28,6 +28,7 @@ namespace HackVars
 
 		int Hotkey;
 		int FOV = 30;
+		int Smooth = 5;
 	};
 	namespace Visuals
 	{

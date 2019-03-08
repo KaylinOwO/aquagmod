@@ -1,6 +1,15 @@
 typedef bool(__thiscall* CreateMoveFn)(void*, float, CUserCmd*);
 CreateMoveFn orgCreateMove = nullptr;
 
+inline void AngleNormalize(QAngle& v)
+{
+	for (auto i = 0; i < 3; i++)
+	{
+		if (v[i] < -180.0f) v[i] += 360.0f;
+		if (v[i] >  180.0f) v[i] -= 360.0f;
+	}
+}
+
 bool __fastcall hookCreateMove(ClientMode* ClientMode, void* edx, float flInputSampleTime, CUserCmd* cmd)
 {
 	if (!cmd)
@@ -57,6 +66,7 @@ bool __fastcall hookCreateMove(ClientMode* ClientMode, void* edx, float flInputS
 					cmd->viewangles = TargetAngle;
 				if (HackVars::Aimbot::Autoshoot)
 					cmd->buttons.SetFlag(IN_ATTACK);
+
 				H::Util::CorrectMovement(cmd, ViewAngle);
 				Aim = true;
 				cmd->tick_count = TIME_TO_TICKS(Target->m_flSimulationTime());
@@ -74,7 +84,9 @@ bool __fastcall hookCreateMove(ClientMode* ClientMode, void* edx, float flInputS
 					cmd->viewangles = TargetAngle;
 				if (HackVars::Aimbot::Autoshoot)
 					cmd->buttons.SetFlag(IN_ATTACK);
+
 				H::Util::CorrectMovement(cmd, ViewAngle);
+
 				Aim = true;
 				cmd->tick_count = TIME_TO_TICKS(Target->m_flSimulationTime());
 				// ^ that will not hit anyone fake lagging in hvh fyi.

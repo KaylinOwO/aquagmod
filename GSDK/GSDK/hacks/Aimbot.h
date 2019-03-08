@@ -19,6 +19,7 @@ namespace H
 		Vector ShootDirection = Vector(1.0f, 0.0f, 0.0f) + (Vector(0.0f, -1.0f, 0.0f) * Spread * Random[0]) + (Vector(0.0f, 0.0f, 1.0f) * Spread * Random[1]); // 0,0,0
 
 		QAngle out = H::Util::Math::GetAngle(Vector(0, 0, 0), ShootDirection);
+
 		out = H::Util::Math::FixAngles(out);
 		return out;
 	}

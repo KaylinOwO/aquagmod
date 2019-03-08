@@ -38,6 +38,8 @@ namespace Hook
 
 		// ViewRender
 		orgRenderView = (RenderViewFn)ViewRender->hookFunction(6, hookRenderView);
+		//orgView_Render = (ViewRenderFn)ViewRender->hookFunction(26, hookView_Render); xd
+		
 
 		// Renderview
 		orgSceneEnd = (SceneEndFn)RenderView->hookFunction(9, hookSceneEnd);

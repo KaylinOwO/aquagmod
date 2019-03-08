@@ -524,5 +524,8 @@
     <ClInclude Include="GSDK\hacks\ESP.h">
       <Filter>Header Files\GSDK\Game Events</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Aqua For Garry%27s Mod\GSDK\GSDK\Hooks\IViewRender\IVRenderView_ViewRender.h">
+      <Filter>Header Files\GSDK\Hooks\IVRenderView</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

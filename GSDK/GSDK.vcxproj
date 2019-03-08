@@ -146,6 +146,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\Aqua For Garry%27s Mod\GSDK\GSDK\hacks\Backtrack.h" />
     <ClInclude Include="..\..\Aqua For Garry%27s Mod\GSDK\GSDK\hacks\Followbot.h" />
+    <ClInclude Include="..\..\Aqua For Garry%27s Mod\GSDK\GSDK\Hooks\IViewRender\IVRenderView_ViewRender.h" />
     <ClInclude Include="..\..\Aqua For Garry%27s Mod\GSDK\Singleton.h" />
     <ClInclude Include="Fonts.hpp" />
     <ClInclude Include="Fontz.h" />

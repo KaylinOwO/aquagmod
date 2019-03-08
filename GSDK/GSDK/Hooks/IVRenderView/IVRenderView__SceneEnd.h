@@ -5,3 +5,4 @@ void __fastcall hookSceneEnd(RenderView* view, void* edx)
 {
 	return orgSceneEnd(view);
 }
+

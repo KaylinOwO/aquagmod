@@ -291,4 +291,25 @@ public:
 	// handles support for software cursors
 	virtual void		SetSoftwareCursor(bool bUseSoftwareCursor) = 0;
 	virtual void		PaintSoftwareCursor() = 0;
+
+	void StartDrawing()
+	{
+		using StartDrawingFn = void(__thiscall*)(void*);
+		static StartDrawingFn StartDrawing;
+
+		if (!StartDrawing)
+			StartDrawing = (StartDrawingFn)(Util::Pattern::FindPattern("vguimatsurface.dll", "55 8B EC 64 A1 ?? ?? ?? ?? 6A FF 68 ?? ?? ?? ?? 50 64 89 25 ?? ?? ?? ?? 83 EC 14"));
+
+		StartDrawing(this);
+	}
+	void FinishDrawing()
+	{
+		using FinishDrawingFn = void(__thiscall*)(void*);
+		static FinishDrawingFn FinishDrawing;
+
+		if (!FinishDrawing)
+			FinishDrawing = (FinishDrawingFn)(Util::Pattern::FindPattern("vguimatsurface.dll", "55 8B EC 6A FF 68 ?? ?? ?? ?? 64 A1 ?? ?? ?? ?? 50 64 89 25 ?? ?? ?? ?? 51 56 6A 00"));
+
+		FinishDrawing(this);
+	}
 };

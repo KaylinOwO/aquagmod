@@ -56,3 +56,39 @@ void __fastcall hookRenderView(IViewRender* ViewRender, void* edx, CViewSetup& v
 	}
 	return orgRenderView(ViewRender,view,nClearFlags,whatToDraw);
 }
+
+
+typedef void(__thiscall* ViewRenderFn)(void*, vrect_t* rect);
+ViewRenderFn orgView_Render = nullptr;
+
+void __fastcall hookView_Render(CHLClient* client, void* edx, vrect_t* rect) // index 26 
+{
+	orgView_Render(client, rect);
+
+	static BYTE* IsRecordingMovie = *(BYTE**)(Util::Pattern::FindPattern("engine.dll", "55 8B EC A1 ? ? ? ? 81 EC ? ? ? ? D9 45 18"/*CL_StartMovie*/) + 0x3E);
+	if (engine()->IsTakingScreenshot() || *IsRecordingMovie) // steam screenshot & startmovie checks
+		return;
+
+	float colormod[3] = { 1.f,1.f,1.f };
+	IMaterial* DebugWhite = MaterialSystem()->FindMaterial("models/debug/debugwhite", TEXTURE_GROUP_MODEL);
+	DebugWhite->SetMaterialVarFlag(MATERIAL_VAR_IGNOREZ, true);
+	DebugWhite->SetMaterialVarFlag(MATERIAL_VAR_SELFILLUM, true);
+	DebugWhite->AddRef();
+
+	Render()->Push3DView(ViewRender()->m_view, 0, nullptr, ViewRender()->GetFrustum());
+	for (int i = 1; i <= globals()->maxClients; i++) {
+		C_GMOD_Player* player = (C_GMOD_Player*)cliententitylist()->GetClientEntity(i);
+
+		if (!player || !player->IsPlayer() || !player->IsAlive())
+			continue;
+
+		ModelRender()->ForcedMaterialOverride(DebugWhite);
+		renderview()->SetColorModulation(colormod);
+		player->GetClientRenderable()->DrawModel(STUDIO_RENDER);
+		ModelRender()->ForcedMaterialOverride(nullptr);
+	}
+	Render()->PopView(ViewRender()->GetFrustum());
+
+	surface()->StartDrawing();
+	surface()->FinishDrawing();
+}

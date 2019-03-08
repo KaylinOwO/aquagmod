@@ -81,4 +81,9 @@ public:
 	virtual void		Nothing_04(void) = 0;
 	virtual void		ShouldForceNoVis() = 0;									 // dont think the type is right btw 
 	virtual void		ViewDrawScene_Intro(const CViewSetup &view, int nClearFlags, const void *introData) = 0; // dont think the type is right btw 
+
+	BYTE pad01[4];
+	BYTE pad02[4];
+
+	CViewSetup m_view;
 };

@@ -15,7 +15,7 @@ public:
 	ImFont* weaponxd = nullptr;
 	ImFont* icon = nullptr;
 	ImFont* menubarxd = nullptr;
-	ImFont* eagle = nullptr;
+	ImFont* NCCIcon = nullptr;
 	ImFont* feagle = nullptr;
 	ImFont* Choktoff = nullptr;
 };

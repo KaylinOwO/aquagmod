@@ -56,8 +56,13 @@ namespace Menu
 			//ImGui::MyButton("a", true, ImVec2(880, 95));
 			//ImGui::PopFont();
 
-			ImGui::PushFont(gFontz.feagle);
+			//style.ItemSpacing = ImVec2(0, 0);
+			//ImGui::PushFont(gFontz.NCCIcon);
+			//style.Colors[ImGuiCol_Text] = ImVec4(1.00f, 1.00f, 1.00f, 1.00f);
+			//ImGui::MyButton("A", true, ImVec2(855, 80));
+			//ImGui::PopFont();
 
+			ImGui::PushFont(gFontz.feagle);
 
 			if (tab == 0) morphBtnActiveTab(); else morphBtnNormalTab();
 			style.ButtonTextAlign = ImVec2(0.5f, 0.5f);

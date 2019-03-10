@@ -36,6 +36,9 @@ namespace H
 		if (!LocalPlayer || !cmd || !LocalPlayer->IsAlive())
 			return false;
 
+		if (HackVars::Aimbot::EnemyOnly && Target->GetTeam() == LocalPlayer->GetTeam())
+			return false;
+
 		Vector2D AngVec2D = Vector2D(H::Util::Math::AngleNormalizePositive(cmd->viewangles.x), H::Util::Math::AngleNormalizePositive(cmd->viewangles.y));
 
 

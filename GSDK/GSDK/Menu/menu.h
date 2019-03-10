@@ -94,6 +94,7 @@ namespace Menu
 
 					ImGui::Checkbox("Enabled", &HackVars::Aimbot::Enabled);
 					ImGui::Hotkey("Hotkey", &HackVars::Aimbot::Hotkey);
+					ImGui::Checkbox("Enemy Only", &HackVars::Aimbot::EnemyOnly);
 					ImGui::PushItemWidth(150.0f);
 
 					ImGui::SliderInt("FOV", &HackVars::Aimbot::FOV, 0, 360);
@@ -123,6 +124,7 @@ namespace Menu
 					ImGui::Spacing();
 
 					ImGui::Checkbox("Enabled", &HackVars::Visuals::Enabled);
+					ImGui::Checkbox("Enemy Only", &HackVars::Visuals::ESP::EnemyOnly);
 
 					ImGui::PushItemWidth(150.0f);
 

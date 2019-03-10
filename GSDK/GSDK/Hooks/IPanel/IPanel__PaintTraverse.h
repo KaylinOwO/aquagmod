@@ -47,6 +47,9 @@ void __fastcall hkPaintTraverse(void* ecx, void* edx, vgui::VPanel* vguiPanel, b
 		if (player == LocalPlayer || !player->IsAlive())
 			continue;
 
+		if (HackVars::Visuals::ESP::EnemyOnly && player->GetTeam() == LocalPlayer->GetTeam())
+			continue;
+
 		if (player->ShouldDraw()) {
 			if(HackVars::Visuals::Enabled && HackVars::Visuals::ESP::PlayerBox || HackVars::Visuals::Enabled && HackVars::Visuals::ESP::PlayerDrawHealth || HackVars::Visuals::Enabled && HackVars::Visuals::ESP::PlayerDrawHealth)
 				H::ESP::DrawBoundingBox(player);

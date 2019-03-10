@@ -25,6 +25,7 @@ namespace HackVars
 		bool Silent;
 		bool Autoshoot;
 		bool Nospread;
+		bool EnemyOnly;
 
 		int Hotkey;
 		int FOV = 30;
@@ -54,6 +55,7 @@ namespace HackVars
 		{
 			//player 
 			bool PlayerESP;
+			bool EnemyOnly;
 
 			bool PlayerBox;
 			int PlayerBoxStyle;

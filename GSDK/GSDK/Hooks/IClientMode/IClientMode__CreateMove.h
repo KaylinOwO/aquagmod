@@ -41,6 +41,9 @@ bool __fastcall hookCreateMove(ClientMode* ClientMode, void* edx, float flInputS
 	bool HoldingExplosiveWeapon = H::Util::IsExplosive();
 	bool HoldingWeaponWithNospread = H::Util::IsNospreadWeapon();
 
+	//if (!LocalPlayer->GetActiveWeapon()->CanShoot())
+		//cmd->viewangles.Init;
+
 	if (HackVars::Misc::Bunnyhop)
 		H::Bhop(cmd);
 
